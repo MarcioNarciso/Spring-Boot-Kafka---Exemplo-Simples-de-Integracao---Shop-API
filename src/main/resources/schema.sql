@@ -8,7 +8,7 @@ CREATE TABLE shop (
 CREATE TABLE shop_item (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	product_identifier VARCHAR(100) NOT NULL,
-	amout INT NOT NULL,
+	amount INT NOT NULL,
 	price FLOAT NOT NULL,
 	shop_id BIGINT REFERENCES shop(id)
 );
