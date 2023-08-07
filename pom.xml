@@ -48,6 +48,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Biblioteca que implementa a API do Kafka -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<version>3.0.9</version>
+		</dependency>
 	</dependencies>
 
 	<build>
