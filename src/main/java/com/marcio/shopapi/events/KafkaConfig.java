@@ -22,11 +22,15 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.marcio.shopapi.dto.ShopDTO;
 
+/**
+ * Classe que contém as configurações de integração com o Kafka.
+ */
+
 @Configuration
 @EnableKafka
 public class KafkaConfig {
 
-	@Value(value = "${kafka.boostrapAddress : localhost:9092}")
+	@Value(value = "${kafka.boostrapAddress:localhost:9092}")
 	private String bootstrapAddress;
 	
 	@Bean
@@ -49,20 +53,25 @@ public class KafkaConfig {
 		return new KafkaTemplate<String, ShopDTO>(this.producerFactory());
 	}
 	
+	@Bean
 	public ConsumerFactory<String, ShopDTO> consumerFactory() {
-		JsonDeserializer<ShopDTO> deserializer = new JsonDeserializer<>(ShopDTO.class);
+//		JsonDeserializer<ShopDTO> deserializer = new JsonDeserializer<>(ShopDTO.class);
 		
 		HashMap<String, Object> props = new HashMap();
 		
 		// Define o endereço e porta HTTP do Kafka
 		props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, this.bootstrapAddress);
 		
-		return new DefaultKafkaConsumerFactory(props, new StringDeserializer(), deserializer);
+		props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+		props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaMessageDeserializerShopDTO.class);
+		
+//		return new DefaultKafkaConsumerFactory(props, new StringDeserializer(), deserializer);
+		return new DefaultKafkaConsumerFactory<>(props);
 	}
 	
 	@Bean
 	public ConcurrentKafkaListenerContainerFactory<String, ShopDTO>	kafkaListenerContainerFactory() {
-		ConcurrentKafkaListenerContainerFactory<String, ShopDTO> factory = new ConcurrentKafkaListenerContainerFactory();
+		ConcurrentKafkaListenerContainerFactory<String, ShopDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
 		
 		factory.setConsumerFactory(this.consumerFactory());
 		

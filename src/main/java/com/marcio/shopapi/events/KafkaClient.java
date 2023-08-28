@@ -9,6 +9,11 @@ import com.marcio.shopapi.dto.ShopDTO;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Classe que envia a mensagem para o Kafka.
+ * Esta classe está sendo o produtor.
+ */
+
 @Service
 @RequiredArgsConstructor
 public class KafkaClient {
