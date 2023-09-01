@@ -35,6 +35,9 @@ public class Shop {
 	@Temporal(TemporalType.DATE)
 	private LocalDate dateShop;
 	
+	@Column(name = "buyer_identifier")
+	private String buyerIdentifier;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "shop")
 	private List<ShopItem> items;
 	
@@ -43,6 +46,7 @@ public class Shop {
 		shop.setIdentifier(shopDto.getIdentifier());
 		shop.setStatus(shopDto.getStatus());
 		shop.setDateShop(shopDto.getDateShop());
+		shop.setBuyerIdentifier(shopDto.getBuyerIdentifier());
 		
 		// Converte os ShopItemDTO para ShopItem
 		List<ShopItem> itens = shopDto.getItems()

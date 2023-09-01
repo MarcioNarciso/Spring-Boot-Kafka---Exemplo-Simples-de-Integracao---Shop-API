@@ -1,5 +1,6 @@
 CREATE TABLE shop (
 	id INT PRIMARY KEY AUTO_INCREMENT,
+	buyer_identifier VARCHAR(100) NOT NULL,
 	identifier VARCHAR(255) NOT NULL,
 	status VARCHAR(255) NOT NULL,
 	date_shop TIMESTAMP
