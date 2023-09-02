@@ -30,7 +30,7 @@ import com.marcio.shopapi.dto.ShopDTO;
 @EnableKafka
 public class KafkaConfig {
 
-	@Value(value = "${kafka.boostrapAddress:localhost:9092}")
+	@Value(value = "${kafka.bootstrapAddress:localhost:9092}")
 	private String bootstrapAddress;
 	
 	@Bean

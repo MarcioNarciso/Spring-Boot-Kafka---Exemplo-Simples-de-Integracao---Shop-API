@@ -24,7 +24,7 @@ public class KafkaMessageDeserializerShopDTO implements Deserializer<ShopDTO>{
 			
 			return objectMapper.readValue(data, ShopDTO.class);
 		} catch (Exception e) {
-			throw new SerializationException("Erro quando estava desserializando btye[] para ShopDTO.");
+			throw new SerializationException("Erro quando estava desserializando byte[] para ShopDTO.");
 		}
 	}
 
