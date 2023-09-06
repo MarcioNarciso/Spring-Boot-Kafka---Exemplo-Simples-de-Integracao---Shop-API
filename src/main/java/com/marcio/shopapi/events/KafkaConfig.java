@@ -22,10 +22,13 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.marcio.shopapi.dto.ShopDTO;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Classe que contém as configurações de integração com o Kafka.
  */
 
+@Slf4j
 @Configuration
 @EnableKafka
 public class KafkaConfig {
@@ -36,6 +39,8 @@ public class KafkaConfig {
 	@Bean
 	public ProducerFactory<String, ShopDTO> producerFactory() {
 		Map<String, Object> props = new HashMap<>();
+		
+		this.log.info("PRODUCER CONECTADO NO KAFKA: "+bootstrapAddress);
 		
 		// Define o endereço e porta HTTP do Kafka
 		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
@@ -56,6 +61,8 @@ public class KafkaConfig {
 	@Bean
 	public ConsumerFactory<String, ShopDTO> consumerFactory() {
 //		JsonDeserializer<ShopDTO> deserializer = new JsonDeserializer<>(ShopDTO.class);
+		
+		this.log.info("CONSUMER CONECTADO NO KAFKA: "+bootstrapAddress);
 		
 		HashMap<String, Object> props = new HashMap();
 		
