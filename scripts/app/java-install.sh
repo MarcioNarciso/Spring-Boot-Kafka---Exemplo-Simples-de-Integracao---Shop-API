@@ -40,13 +40,13 @@ echo "Extração terminada."
 echo "Instalando o OpenJDK..."
 
 # Move o openjdk para seu diretório permanente
-mv jdk-20.0.2 /opt/
+sudo mv jdk-20.0.2 /opt/
 
 JAVA_HOME="/opt/jdk-20.0.2/"
 
 # Troca pro diretório em que estará as variáveis de ambiente do Java
 cd /etc/profile.d
-echo -e "export JAVA_HOME=$JAVA_HOME; export PATH=\$PATH:\$JAVA_HOME/bin" > java_home.sh
+sudo echo -e "export JAVA_HOME=$JAVA_HOME; export PATH=\$PATH:\$JAVA_HOME/bin" > java_home.sh
 
 if [ $? -ne 0 ]
 then
