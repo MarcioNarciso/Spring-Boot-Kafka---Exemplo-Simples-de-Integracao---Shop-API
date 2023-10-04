@@ -8,10 +8,22 @@ which docker &> /dev/null
 # -ne = not equal
 if [ $? -ne 0 ]
 then
-    echo -e "Instalando Docker..."
-    curl -fsSL https://get.docker.com/ | sh
+    echo "Instalando Docker..."
+    #curl -fsSL https://get.docker.com/ | sh
+    sudo dnf update -y
+    sudo dnf install docker
+    
+    #Inicializando o serviço do docker
+    sudo systemctl start docker
+    
+    # Habilitando o serviço do Docker para ser inicializado no boot
+    sudo systemctl enable docker
+    
+    # Adicionando o usuário ao grupo do Docker. 
+    # Para que não seja necessário o uso do "sudo"
+    sudo adduser ec2-user docker
 else
-    echo -e "Docker já instalado."
+    echo "Docker já instalado."
 fi
 
 
