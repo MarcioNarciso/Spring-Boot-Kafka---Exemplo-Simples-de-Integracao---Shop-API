@@ -2,6 +2,9 @@
 
 # Script de preparação do ambiente na AWS
 
+# Realiza a instalação do OpenJDK
+. $(dirname $0)/scripts/app/java-install.sh
+
 # Realiza a compilação da aplicação
 . $(dirname "$0")/scripts/app/app-build.sh
 
