@@ -12,7 +12,7 @@ fi
 
 BASEDIR=$(readlink -f "$0")
 
-echo BASEDIR
+echo $BASEDIR
 
 exit 1
 
