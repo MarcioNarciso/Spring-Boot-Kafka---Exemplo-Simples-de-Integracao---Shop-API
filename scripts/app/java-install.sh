@@ -10,7 +10,7 @@ then
     return 0
 fi
 
-BASEDIR=$(readlink -f "$0")
+BASEDIR=$(dirname "$0")
 
 echo $BASEDIR
 
