@@ -14,8 +14,14 @@ fi
 
 echo "Instalando Docker..."
 #curl -fsSL https://get.docker.com/ | sh
-sudo dnf update -y
-sudo dnf install docker -y
+
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+#sudo dnf update
+#sudo dnf -y install docker
+
+sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Verificando a instalação...
 which docker &> /dev/null
