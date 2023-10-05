@@ -4,5 +4,5 @@
 
 echo "Compilando a aplicação..."
 ./mvnw clean package
-echo -e "${VERDE}Aplicação compilada."
+echo -e "${VERDE}Aplicação compilada.${BRANCO}"
 

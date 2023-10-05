@@ -8,7 +8,7 @@ which docker &> /dev/null
 # -ne = not equal; -eq = equal
 if [ $? -eq 0 ]
 then
-    echo -e "${AZUL}Docker já instalado."
+    echo -e "${AZUL}Docker já instalado.${BRANCO}"
     return 0
 fi
 
@@ -28,7 +28,7 @@ which docker &> /dev/null
 
 if [ $? -ne 0 ]
 then
-    echo -e "${VERMELHO}Erro na instalação do Docker!"
+    echo -e "${VERMELHO}Erro na instalação do Docker!${BRANCO}"
     exit 1
 fi
 
@@ -42,7 +42,7 @@ sudo systemctl enable docker
 # Para que não seja necessário o uso do "sudo"
 sudo adduser ec2-user docker
 
-echo -e "${VERDE}Instalação do Docker concluída."
+echo -e "${VERDE}Instalação do Docker concluída.${BRANCO}"
 
 
 
