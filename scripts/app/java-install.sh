@@ -7,7 +7,7 @@ which java &> /dev/null
 if [ $? -eq 0 ]
 then
     echo "OpenJDK já está instalado!!!"
-    exit 0
+    return 0
 fi
 
 BASEDIR=$(dirname $0)
@@ -56,3 +56,5 @@ fi
 cd $BASEDIR
 
 echo "Instalação do OpenJDK concluída."
+
+pwd
