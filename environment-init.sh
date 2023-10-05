@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Definindo as cores das mensagens
+AZUL='\033[0;34m'
+BRANCO='\033[0;37m'
+VERMELHO='\033[1;31m'
+VERDE='\033[0;32m'
+
 # Script de preparação do ambiente na AWS
 
 # Realiza a instalação do OpenJDK

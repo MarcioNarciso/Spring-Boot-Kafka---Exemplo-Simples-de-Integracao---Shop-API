@@ -6,7 +6,7 @@ which java &> /dev/null
 
 if [ $? -eq 0 ]
 then
-    echo "OpenJDK já está instalado!!!"
+    echo -e "${AZUL}OpenJDK já está instalado!!!"
     return 0
 fi
 
@@ -18,11 +18,11 @@ wget -cq https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd9
 
 if [ $? -ne 0 ]
 then
-    echo "Erro no Download do OpenJDK!"
+    echo -e "${VERMELHO}Erro no Download do OpenJDK!"
     exit 1
 fi
 
-echo "Download concluído."
+echo -e "${VERDE}Download concluído."
 
 # Troca pro diretório em que o arquivo foi baixado
 cd ~/
@@ -32,11 +32,11 @@ tar xzf openjdk.tar.gz
 
 if [ $? -ne 0 ]
 then
-    echo "Erro na extração do OpenJDK!"
+    echo -e "${VERMELHO}Erro na extração do OpenJDK!"
     exit 1
 fi
 
-echo "Extração terminada."
+echo -e "${VERDE}Extração terminada."
 
 echo "Instalando o OpenJDK..."
 
@@ -50,10 +50,10 @@ which java &> /dev/null
 
 if [ $? -ne 0 ]
 then 
-    echo "Erro na instalação do OpenJDK!"
+    echo -e "${VERMELHO}Erro na instalação do OpenJDK!"
     exit 1
 fi
 
 cd $BASEDIR
 
-echo "Instalação do OpenJDK concluída."
+echo -e "${VERDE}Instalação do OpenJDK concluída."
