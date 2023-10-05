@@ -47,7 +47,9 @@ JAVA_DIR="/opt/jdk-20.0.2/"
 
 if [ ! -d JAVA_DIR ] 
 then
+    echo JAVA_DIR
     echo -e "${VERMELHO}Erro na instalação do OpenJDK! Não foi possível movê-lo.${BRANCO}"
+    exit 1
 fi
 
 # Inclui as variáveis de ambiente no shell atual
