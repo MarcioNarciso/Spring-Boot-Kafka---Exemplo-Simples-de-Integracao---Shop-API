@@ -57,5 +57,3 @@ fi
 cd $BASEDIR
 
 echo "Instalação do OpenJDK concluída."
-
-pwd

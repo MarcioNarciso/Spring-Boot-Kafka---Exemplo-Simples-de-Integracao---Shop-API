@@ -5,4 +5,4 @@
 echo "Compilando a aplicação..."
 ./mvnw clean package
 echo "Aplicação compilada."
-exit 1
+
