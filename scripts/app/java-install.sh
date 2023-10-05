@@ -13,10 +13,6 @@ fi
 BASEDIR=$(readlink -f "$0")
 BASEDIR=$(dirname $BASEDIR)
 
-echo $BASEDIR
-
-exit 1
-
 echo "Baixando o OpenJDK 20..."
 wget -cq https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-x64_bin.tar.gz -O ~/openjdk.tar.gz
 
