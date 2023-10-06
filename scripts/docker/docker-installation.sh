@@ -24,7 +24,7 @@ fi
 echo -e "${VERDE}Download concluído.${BRANCO}"
 
 echo "Instalando Docker..."
-sudo dnf -y install $PATH_DOCKER_PACKAGE
+sudo dnf -y install ~/Downloads/docker.rpm
 
 # Verificando a instalação...
 which docker &> /dev/null
