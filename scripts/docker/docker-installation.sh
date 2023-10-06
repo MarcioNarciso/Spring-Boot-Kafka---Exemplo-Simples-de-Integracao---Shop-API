@@ -12,21 +12,8 @@ then
     return 0
 fi
 
-echo "Baixando Docker..."
-wget -cq https://download.docker.com/linux/fedora/39/x86_64/stable/Packages/containerd.io-1.6.24-3.1.fc39.x86_64.rpm -O ~/Downloads/docker.rpm
-
-if [ $? -eq 1 ]
-then
-    echo -e "${VERMELHO}Erro no download do Docker!${BRANCO}"
-    exit 1
-fi
-
-echo -e "${VERDE}Download concluído.${BRANCO}"
-
 echo "Instalando Docker..."
-sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-
-sudo dnf -y install ~/Downloads/docker.rpm
+sudo dnf -y install docker
 
 # Verificando a instalação...
 which docker &> /dev/null
