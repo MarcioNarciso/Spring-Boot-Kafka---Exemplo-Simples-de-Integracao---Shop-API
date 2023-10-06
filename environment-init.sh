@@ -7,7 +7,7 @@ VERMELHO='\033[1;31m'
 VERDE='\033[0;32m'
 
 # Cria a pasta de ~/Downloads caso ela não exista
-mkdir ~/Downloads
+if [ ! -d ~/Downloads ]; then mkdir ~/Downloads; fi;
 
 # Script de preparação do ambiente na AWS
 
