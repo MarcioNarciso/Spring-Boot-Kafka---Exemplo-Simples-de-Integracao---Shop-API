@@ -24,6 +24,8 @@ fi
 echo -e "${VERDE}Download concluído.${BRANCO}"
 
 echo "Instalando Docker..."
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
 sudo dnf -y install ~/Downloads/docker.rpm
 
 # Verificando a instalação...
