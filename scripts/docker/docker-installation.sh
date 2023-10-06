@@ -17,6 +17,8 @@ PATH_DOCKER_PACKAGE="~/Downloads/docker.rpm"
 echo "Baixando Docker..."
 wget -cq https://download.docker.com/linux/fedora/39/x86_64/stable/Packages/containerd.io-1.6.24-3.1.fc39.x86_64.rpm -O $PATH_DOCKER_PACKAGE
 
+echo $PATH_DOCKER_PACKAGE
+
 if [ ! -e $PATH_DOCKER_PACKAGE ]
 then
     echo -e "${VERMELHO}Erro no download do Docker!${BRANCO}"
