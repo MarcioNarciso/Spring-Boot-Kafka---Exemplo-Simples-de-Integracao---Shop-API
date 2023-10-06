@@ -12,23 +12,12 @@ then
     return 0
 fi
 
-#echo "Instalando Docker..."
-#curl -fsSL https://get.docker.com/ | sh
-
-#sudo dnf -y install dnf-plugins-core
-#sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
-#sudo dnf update
-#sudo dnf -y install docker
-
-#sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 PATH_DOCKER_PACKAGE="~/Downloads/docker.rpm"
 
 echo "Baixando Docker..."
 wget -cq https://download.docker.com/linux/fedora/39/x86_64/stable/Packages/containerd.io-1.6.24-3.1.fc39.x86_64.rpm -O $PATH_DOCKER_PACKAGE
 
-if [ -e $PATH_DOCKER_PACKAGE ] 
+if [ ! -e $PATH_DOCKER_PACKAGE ]
 then
     echo -e "${VERMELHO}Erro no download do Docker!${BRANCO}"
     exit 1
