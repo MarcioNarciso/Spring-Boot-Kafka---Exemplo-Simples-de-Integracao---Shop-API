@@ -15,9 +15,7 @@ fi
 PATH_DOCKER_PACKAGE="~/Downloads/docker.rpm"
 
 echo "Baixando Docker..."
-wget -cq https://download.docker.com/linux/fedora/39/x86_64/stable/Packages/containerd.io-1.6.24-3.1.fc39.x86_64.rpm -O $PATH_DOCKER_PACKAGE
-
-echo $PATH_DOCKER_PACKAGE
+wget -cq https://download.docker.com/linux/fedora/39/x86_64/stable/Packages/containerd.io-1.6.24-3.1.fc39.x86_64.rpm -O ~/Downloads/docker.rpm
 
 if [ ! -e $PATH_DOCKER_PACKAGE ]
 then
