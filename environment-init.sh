@@ -6,6 +6,9 @@ BRANCO='\033[0;37m'
 VERMELHO='\033[1;31m'
 VERDE='\033[0;32m'
 
+# Cria a pasta de ~/Downloads caso ela não exista
+mkdir ~/Downloads
+
 # Script de preparação do ambiente na AWS
 
 # Realiza a instalação do OpenJDK
