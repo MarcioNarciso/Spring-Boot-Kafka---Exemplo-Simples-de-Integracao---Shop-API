@@ -14,7 +14,7 @@ BASEDIR=$(readlink -f "$0")
 BASEDIR=$(dirname $BASEDIR)
 
 echo "Baixando o OpenJDK 20..."
-wget -cq https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-x64_bin.tar.gz -O ~/openjdk.tar.gz
+wget -cq https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-x64_bin.tar.gz -O ~/Downloads/openjdk.tar.gz
 
 if [ $? -ne 0 ]
 then
@@ -25,7 +25,7 @@ fi
 echo -e "${VERDE}Download concluído.${BRANCO}"
 
 # Troca pro diretório em que o arquivo foi baixado
-cd ~/
+cd ~/Downloads
 
 echo "Extraindo o OpenJDK..."
 tar xzf openjdk.tar.gz 
@@ -62,6 +62,7 @@ then
     exit 1
 fi
 
+# Volta para o diretório raiz do projeto
 cd $BASEDIR
 
 echo -e "${VERDE}Instalação do OpenJDK concluída.${BRANCO}"
