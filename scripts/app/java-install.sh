@@ -52,6 +52,8 @@ then
 fi
 
 # Inclui as variáveis de ambiente no shell atual
+sudo bash -c "echo -e 'export JAVA_HOME=\"$JAVA_DIR\"; export PATH=\"\$PATH:\$JAVA_HOME/bin\"' > /etc/environment";
+
 source /etc/environment
 
 which java &> /dev/null
