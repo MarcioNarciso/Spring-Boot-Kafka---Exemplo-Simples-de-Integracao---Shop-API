@@ -32,7 +32,7 @@ sudo systemctl enable docker
 
 # Adicionando o usuário ao grupo do Docker. 
 # Para que não seja necessário o uso do "sudo"
-sudo usermod -aG docker ec2-user
+sudo usermod -aG docker $USER && newgrp docker
 
 echo -e "${VERDE}Instalação do Docker concluída.${BRANCO}"
 

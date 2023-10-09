@@ -4,4 +4,4 @@
 
 echo "Compilando Dockerfile..."
 sudo docker buildx build -t shop-api:1.0  $(dirname "$0")
-echo "Imagem shop-api:1.0 criada."
+echo -e "${VERDE}Imagem shop-api:1.0 criada.${BRANCO}"
