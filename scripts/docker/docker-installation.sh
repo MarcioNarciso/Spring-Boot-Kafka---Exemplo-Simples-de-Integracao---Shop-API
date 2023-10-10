@@ -36,8 +36,6 @@ sudo usermod -aG docker $USER
 
 newgrp docker
 
+pwd
+
 echo -e "${VERDE}Instalação do Docker concluída.${BRANCO}"
-
-
-
-
