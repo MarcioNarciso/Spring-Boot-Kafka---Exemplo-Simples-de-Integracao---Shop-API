@@ -34,8 +34,10 @@ sudo systemctl enable docker
 # Para que não seja necessário o uso do "sudo"
 sudo usermod -aG docker $USER
 
+pwd
+
 newgrp docker
 
-pwd
+
 
 echo -e "${VERDE}Instalação do Docker concluída.${BRANCO}"
