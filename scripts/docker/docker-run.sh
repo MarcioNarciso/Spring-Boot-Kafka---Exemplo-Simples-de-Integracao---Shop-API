@@ -4,3 +4,6 @@
 echo "Executando o contêiner shop-api:1.0..."
 sudo docker container run -d --restart always -p 8080:8080 --name shop-api_1.0 shop-api:1.0
 # echo "${AZUL}Contêiner rodando.${BRANCO}"
+
+# Troca o grupo atual que o usuário está logado
+newgrp docker
